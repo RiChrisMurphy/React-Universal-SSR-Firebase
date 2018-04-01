@@ -7,15 +7,17 @@ import reducers from '../client/reducers';
 export default req => {
  const axiosInstance = axios.create({
   baseURL: 'http://localhost:3000/',
-  headers: { cookie: req.get('cookie') || '' }
+  headers: {
+   cookie: req.get('cookie') || ''
+  }
  });
-
  const store = createStore(
   reducers,
   {},
   applyMiddleware(thunk.withExtraArgument(axiosInstance))
  );
  if (req.session.decodedToken) {
+  console.log(req.session.decodedToken.user_id, 'user id');
   store.dispatch(authLoggedInSuccess(req.session.decodedToken.user_id));
  }
  return store;

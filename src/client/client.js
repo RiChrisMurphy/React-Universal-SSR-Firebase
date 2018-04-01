@@ -12,6 +12,9 @@ import { renderRoutes } from 'react-router-config';
 import axios from 'axios';
 import FirebaseApi from './firebase/FirebaseApi';
 import { authInitialized } from './actions/authActions';
+import ReactModal from 'react-modal';
+
+ReactModal.defaultStyles.overlay.backgroundColor = 'rgba(0,0,0,.5)';
 
 const axiosInstance = axios.create({
  baseURL: '/api'

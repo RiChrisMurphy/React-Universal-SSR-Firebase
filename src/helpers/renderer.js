@@ -20,13 +20,18 @@ export default (req, store, context) => {
  <head>
   ${helmet.title.toString()}
 ${helmet.meta.toString()}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
-  <link rel="stylesheet" href="styles.css">
-
+<meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+<link rel="stylesheet" href="styles.css">
  </head>
  <body>
    <div id="root">${content}</div>
    <script>window.INITIAL_STATE = ${serialize(store.getState())}</script>
+   <script src="https://js.stripe.com/v3/"></script>
+
    <script src="bundle.js"></script>
- </body></html>`;
+
+
+</body></html>`;
 };

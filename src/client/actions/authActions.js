@@ -1,9 +1,10 @@
 import * as types from './actionTypes';
 import firebaseApi from '../firebase/firebaseApi';
+
 export const authInitialized = user => (dispatch, getState, api) => {
  dispatch(authInitializedDone());
  if (user) {
-  //grab data from database for user here potentially
+  //dispatch(authLoggedInSuccess(user.uid));
  } else {
   dispatch(authLoggedOutSuccess());
  }
@@ -35,16 +36,12 @@ export const SignInWithGoogle = () => (dispatch, getState, api) => {
      token: idToken
     });
    })
-   .then(function(response) {
-    dispatch(authLoggedIn(user.uid));
+   .then(response => {
+    dispatch(authLoggedInSuccess(user.uid));
    })
-   .catch(function(error) {});
+   .catch(error => {});
   return user;
  });
-};
-
-export const authLoggedIn = userUID => (dispatch, getState, api) => {
- dispatch(authLoggedInSuccess(userUID));
 };
 
 export const LogOut = () => (dispatch, getState, api) => {

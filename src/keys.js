@@ -15,7 +15,10 @@ const Keys = {
    'https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ttl6y%40motivational-2be93.iam.gserviceaccount.com'
  },
  sessionSecret: 'iud2481270ad',
- firedatabaseURL: 'https://motivational-2be93.firebaseio.com'
+ firedatabaseURL: 'https://motivational-2be93.firebaseio.com',
+ stripeSecretDev: 'sk_test_T8iDII7DalRWI7SClEZjJgJd',
+ alphAvantage: 'XBEY6WV6KHPQ1NIB',
+ newsApi: '096465f1fa5e4ade865f6064acf2d1a2'
 };
 
 module.exports = Keys;

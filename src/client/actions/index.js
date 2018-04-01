@@ -1,3 +1,5 @@
+import * as types from './actionTypes';
+
 export const FETCH_USERS = 'FETCH_USERS';
 export const fetchUsers = () => async (dispatch, getState, api) => {
  const res = await api.get('/users');
@@ -23,5 +25,29 @@ export const fetchAdmins = () => async (dispatch, getState, api) => {
  dispatch({
   type: FETCH_ADMINS,
   payload: res
+ });
+};
+
+export const FETCH_STOCK_DATA = 'FETCH_STOCK_DATA';
+
+export const fetchStockData = () => async (dispatch, getState, api) => {
+ const res = await api.get('/stockdata');
+ dispatch({
+  type: FETCH_STOCK_DATA,
+  payload: res
+ });
+};
+
+export const ModalTrigger = trigger => (dispatch, getState, api) => {
+ console.log(trigger, 'trigger at modalTrigger');
+ if (trigger) {
+  return dispatch({
+   type: types.MODAL_TRIGGER_TRUE,
+   payload: trigger
+  });
+ }
+ return dispatch({
+  type: types.MODAL_TRIGGER_FALSE,
+  payload: trigger
  });
 };
