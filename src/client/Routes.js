@@ -2,7 +2,6 @@ import React from 'react';
 import App from './App';
 import HomePage from './pages/HomePage';
 import NotFoundPage from './pages/NotFoundPage';
-import AdminsListPage from './pages/AdminsListPage';
 import ProductPage from './pages/ProductPage';
 import BabaStockPage from './pages/BabaStockPage';
 
@@ -34,11 +33,3 @@ const Route = [
 ];
 
 export default Route;
-/*{
- ...AdminsListPage,
- path: '/admins'
- {
-  ...UsersListPage,
-  path: '/users'
- },
-},*/
